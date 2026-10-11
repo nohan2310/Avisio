@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Avisio – Plus d'avis Google pour les commerces de France</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <button class="logo" type="button" data-go="home" aria-label="Avisio, accueil"><span class="star" aria-hidden="true">★</span>Avisio</button>
+    <nav class="main" aria-label="Menu principal">
+      <button type="button" data-go="home">Accueil</button>
+      <button type="button" data-go="affiche">Affiche QR</button>
+      <button type="button" data-go="sms">Demande par SMS</button>
+      <button type="button" data-go="reponses">Réponses aux avis</button>
+      <button type="button" data-go="calcul">Calculateur</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ ACCUEIL ============ -->
+<section class="hero" data-view="home">
+  <div class="wrap">
+    <div>
+      <h1>Vos clients sont contents. Faites-le savoir sur Google.</h1>
+      <p class="lead">Avisio aide tous les commerces de France à recevoir plus d'avis Google, et vous prépare les réponses à publier. Entièrement gratuit.</p>
+      <div class="cta-row">
+        <button class="btn" type="button" data-go="affiche">Créer mon affiche gratuite</button>
+        <button class="btn ghost" type="button" data-go="reponses">Voir les réponses aux avis</button>
+      </div>
+      <p class="fine">Gratuit. Sans inscription, sans engagement.</p>
+    </div>
+    <div class="phone" aria-label="Exemple de ce que voit le client">
+      <div class="sms"><small>Ce que voit le client après son passage</small>Merci d'être passé chez Coiffure Martin ! Votre avis nous aide beaucoup. Quelle note nous donnez-vous ?</div>
+      <div class="stars-pick" role="group" aria-label="Choisir une note">
+        <button type="button" data-n="1" aria-label="1 étoile">★</button><button type="button" data-n="2" aria-label="2 étoiles">★</button><button type="button" data-n="3" aria-label="3 étoiles">★</button><button type="button" data-n="4" aria-label="4 étoiles">★</button><button type="button" data-n="5" aria-label="5 étoiles">★</button>
+      </div>
+      <p class="out" id="phoneOut" aria-live="polite">Touchez une étoile pour essayer.</p>
+    </div>
+  </div>
+</section>
+
+<section class="s" data-view="home">
+  <div class="wrap">
+    <h2>Tout ce qu'Avisio peut faire pour vous</h2>
+    <div class="feats">
+      <button class="feat" type="button" data-go="affiche"><h3>Affiche QR</h3><span>Une affiche à imprimer pour votre comptoir : vos clients scannent et laissent un avis.</span><em>Ouvrir</em></button>
+      <button class="feat" type="button" data-go="sms"><h3>Demande par SMS</h3><span>Un message prêt à envoyer à vos clients, depuis votre propre téléphone.</span><em>Ouvrir</em></button>
+      <button class="feat" type="button" data-go="reponses"><h3>Réponses aux avis</h3><span>Des dizaines de métiers : des réponses polies, prêtes à copier.</span><em>Ouvrir</em></button>
+      <button class="feat" type="button" data-go="calcul"><h3>Calculateur d'avis</h3><span>Combien d'avis 5 étoiles pour monter votre note ?</span><em>Ouvrir</em></button>
+    </div>
+  </div>
+</section>
+
+<section class="s alt" data-view="home">
+  <div class="wrap">
+    <h2>Avisio est gratuit</h2>
+    <div class="free">
+      <span class="badge">Gratuit</span>
+      <p><strong>Vous ne payez rien.</strong> L'affiche QR, les demandes d'avis par SMS, les réponses d'avis et le calculateur sont offerts.</p>
+      <ul>
+        <li>Pas de carte bancaire, pas de compte à créer.</li>
+        <li>Les SMS partent depuis votre propre téléphone. Les numéros de vos clients ne sont pas enregistrés sur le site.</li>
+        <li>On vous demande seulement votre avis honnête sur ce qui est utile ou pas.</li>
+      </ul>
+    </div>
+    <h2 style="margin-top:64px">Questions fréquentes</h2>
+    <div style="margin-top:22px">
+      <details><summary>Dois-je installer quelque chose ?</summary><p>Non. Vous créez l'affiche ou le SMS ici, directement depuis votre téléphone ou votre ordinateur.</p></details>
+      <details><summary>Les avis sont-ils faux ou achetés ?</summary><p>Non. Seuls vos vrais clients scannent l'affiche et écrivent ce qu'ils pensent. Avisio ne rédige jamais d'avis à leur place.</p></details>
+      <details><summary>Et si un client est mécontent ?</summary><p>Vous recevez une proposition de réponse calme et professionnelle, que vous relisez avant de publier.</p></details>
+      <details><summary>Qui est derrière Avisio ?</summary><p>Un petit projet gratuit, créé pour aider les commerces de toute la France. On veut savoir ce qui vous est vraiment utile.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AFFICHE + SMS ============ -->
+<section class="s" id="tools" data-view="affiche sms">
+  <div class="wrap">
+    <div class="tool" data-view="affiche">
+      <h2>Votre affiche QR</h2>
+      <p class="sub">Retrouvez votre fiche Google, choisissez une couleur, imprimez. Le client scanne et arrive directement sur la page pour laisser son avis.</p>
+    </div>
+    <div class="tool" data-view="sms">
+      <h2>Votre demande d'avis par SMS</h2>
+      <p class="sub">Retrouvez votre fiche Google, puis envoyez un message prêt à l'emploi à votre client. Le SMS s'ouvre dans l'application Messages de votre téléphone.</p>
+    </div>
+
+    <div class="panel tool" id="shopPanel" data-view="affiche sms">
+      <label>Nom du commerce<input id="shop" placeholder="Ex : Coiffure Martin" autocomplete="off"></label>
+      <label>Ville<input id="city" placeholder="Ex : Lyon" autocomplete="off"></label>
+      <div>
+        <a class="btn ghost" id="findMaps" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true">Trouver mon commerce sur Google Maps</a>
+        <p class="help" style="margin-top:8px">Votre fiche s'ouvre dans un nouvel onglet. Appuyez sur « Avis », puis « Rédiger un avis », copiez le lien et collez-le ci-dessous.</p>
+        <div class="err" id="findErr" role="alert"></div>
+      </div>
+      <label>Lien Google pour laisser un avis, ou identifiant du lieu
+        <input id="link" placeholder="https://search.google.com/local/writereview?placeid=..." autocomplete="off">
+        <span class="help">Lien de votre fiche Google, ou identifiant du lieu (il commence par ChIJ). Pour retrouver cet identifiant, vous pouvez aussi utiliser <a href="https://developers.google.com/maps/documentation/places/web-service/place-id" target="_blank" rel="noopener noreferrer">l'outil officiel de Google</a> (en anglais).</span>
+      </label>
+    </div>
+
+    <div data-view="affiche">
+      <div class="panel tool">
+        <div>
+          <div style="font-weight:500;margin-bottom:10px">Couleur de l'affiche</div>
+          <div class="swatches" id="swatches" role="group" aria-label="Couleur de l'affiche">
+            <button type="button" class="sw" data-c="#0d2b24" aria-label="Émeraude" aria-pressed="true" style="background:#0d2b24"></button>
+            <button type="button" class="sw" data-c="#6d1a2b" aria-label="Bordeaux" aria-pressed="false" style="background:#6d1a2b"></button>
+            <button type="button" class="sw" data-c="#14284b" aria-label="Marine" aria-pressed="false" style="background:#14284b"></button>
+            <button type="button" class="sw" data-c="#85652a" aria-label="Or" aria-pressed="false" style="background:#85652a"></button>
+            <button type="button" class="sw" data-c="#4b2a5c" aria-label="Prune" aria-pressed="false" style="background:#4b2a5c"></button>
+            <button type="button" class="sw" data-c="#1c1c1c" aria-label="Noir" aria-pressed="false" style="background:#1c1c1c"></button>
+          </div>
+        </div>
+        <div class="err" id="err" role="alert"></div>
+        <div class="row"><button class="btn" id="make" type="button">Créer l'affiche</button></div>
+      </div>
+      <section class="preview" id="preview" aria-live="polite">
+        <div class="poster">
+          <div class="shop" id="pShop"></div>
+          <h3>Vous avez aimé ? Dites-le sur Google.</h3>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <img id="pQr" alt="QR code pour laisser un avis Google">
+          <div class="how">Scannez avec votre téléphone.<br>Ça prend 30 secondes. Merci !</div>
+          <div class="small">Affiche offerte par Avisio</div>
+        </div>
+        <div class="row actions" style="justify-content:center;margin-top:22px"><button class="btn" id="print" type="button">Imprimer l'affiche</button></div>
+        <p class="fine no-print" style="text-align:center">Testez le QR code avec votre téléphone avant d'imprimer.</p>
+      </section>
+    </div>
+
+    <div class="panel tool" id="smsPanel" data-view="sms">
+      <h3>Votre message</h3>
+      <p class="help">Aucun numéro n'est enregistré sur le site. N'envoyez la demande qu'aux clients qui ont accepté d'être contactés.</p>
+      <label>Prénom du client (facultatif)<input id="cName" autocomplete="off"></label>
+      <label>Numéro de téléphone du client<input id="cPhone" type="tel" inputmode="tel" placeholder="06 12 34 56 78" autocomplete="off"></label>
+      <label>Message<textarea id="smsBody" rows="4"></textarea></label>
+      <div class="err" id="smsErr" role="alert"></div>
+      <div class="row">
+        <a class="btn" id="smsGo" href="#" aria-disabled="true">Ouvrir mon SMS</a>
+        <button class="btn ghost" id="smsCopy" type="button">Copier le message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REPONSES ============ -->
+<section class="s" data-view="reponses">
+  <div class="wrap">
+    <h2>Réponses aux avis, prêtes à copier</h2>
+    <p class="sub">Choisissez votre métier et la note de l'avis. La réponse est prête : relisez-la, ajoutez un détail de l'avis, puis collez-la sur Google.</p>
+    <div class="panel">
+      <label>Votre métier
+        <select id="lMetier"></select>
+        <span class="help">Votre métier n'est pas dans la liste ? Choisissez « Autre commerce », les réponses restent adaptées.</span>
+      </label>
+      <label>Note de l'avis
+        <select id="lNote">
+          <option value="pos">5 ou 4 étoiles</option>
+          <option value="mid">3 étoiles</option>
+          <option value="neg">1 ou 2 étoiles</option>
+        </select>
+      </label>
+      <label>Prénom du client (facultatif)<input id="lName" autocomplete="off"></label>
+      <label>Signature
+        <input id="lSign" placeholder="Ex : Coiffure Martin" autocomplete="off">
+        <span class="help">Si vide, on prend le nom du commerce rempli dans les outils d'affiche ou de SMS, sinon « L'équipe ».</span>
+      </label>
+      <label>Réponse<textarea id="lOut" rows="8"></textarea></label>
+      <div class="row">
+        <button class="btn" id="lCopy" type="button">Copier la réponse</button>
+        <button class="btn ghost" id="lAlt" type="button">Autre version</button>
+      </div>
+      <p class="help">Conseil : ajoutez un détail de l'avis pour que la réponse sonne personnelle. Pour un avis négatif, ne répondez jamais à chaud : attendez un peu et restez calme.</p>
+    </div>
+
+    <h3 class="block-title">Un exemple</h3>
+    <div class="demo-tabs" role="group" aria-label="Type d'avis">
+      <button type="button" data-case="good" aria-pressed="true">Avis positif</button>
+      <button type="button" data-case="bad" aria-pressed="false">Avis négatif</button>
+    </div>
+    <div class="demo">
+      <div class="card review" id="reviewCard"><div class="who" id="rvWho"></div><div class="st" id="rvStars" aria-hidden="true"></div><p id="rvText"></p></div>
+      <div class="card reply"><div class="label">Réponse proposée</div><p class="txt empty" id="rpText">Cliquez sur le bouton pour voir la réponse.</p></div>
+    </div>
+    <div style="margin-top:16px"><button class="btn" type="button" id="genBtn">Écrire la réponse</button></div>
+    <p class="fine">Exemple fictif.</p>
+  </div>
+</section>
+
+<!-- ============ CALCULATEUR ============ -->
+<section class="s" data-view="calcul">
+  <div class="wrap">
+    <h2>Combien d'avis pour monter votre note ?</h2>
+    <p class="sub">Entrez votre note Google actuelle et votre nombre d'avis. On calcule combien d'avis 5 étoiles il faut pour atteindre la note que vous visez.</p>
+    <div class="panel">
+      <div class="row2">
+        <label>Votre note actuelle<input id="cCur" inputmode="decimal" placeholder="Ex : 4,3" autocomplete="off"></label>
+        <label>Votre nombre d'avis<input id="cN" inputmode="numeric" placeholder="Ex : 85" autocomplete="off"></label>
+        <label>La note que vous visez<input id="cTarget" inputmode="decimal" placeholder="Ex : 4,7" autocomplete="off"></label>
+        <label>Nouveaux avis par semaine<input id="cWeek" inputmode="numeric" placeholder="Ex : 3" autocomplete="off"></label>
+      </div>
+      <div class="resbox" id="cRes" aria-live="polite"></div>
+      <p class="help">Calcul approximatif : Google arrondit la note affichée, et chaque avis moins bon demande des avis 5 étoiles en plus.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<section class="s alt" id="avis-site">
+  <div class="wrap">
+    <h2>Votre avis sur Avisio</h2>
+    <p class="sub">Avisio est gratuit et en cours d'amélioration. Dites-nous ce qui vous est utile, ce qui manque et ce qui ne marche pas.</p>
+    <div class="panel">
+      <div>
+        <div style="font-weight:500;margin-bottom:8px">Votre note pour Avisio</div>
+        <div class="fb-stars" id="fbStars" role="group" aria-label="Votre note sur 5">
+          <button type="button" data-n="1" aria-label="1 étoile">★</button><button type="button" data-n="2" aria-label="2 étoiles">★</button><button type="button" data-n="3" aria-label="3 étoiles">★</button><button type="button" data-n="4" aria-label="4 étoiles">★</button><button type="button" data-n="5" aria-label="5 étoiles">★</button>
+        </div>
+      </div>
+      <label>Ce qui vous est le plus utile
+        <select id="fbFeat">
+          <option value="">Choisir</option>
+          <option>Affiche QR</option>
+          <option>Demande par SMS</option>
+          <option>Réponses aux avis</option>
+          <option>Calculateur d'avis</option>
+          <option>Autre</option>
+        </select>
+      </label>
+      <label>Votre commentaire<textarea id="fbText" rows="5" placeholder="Ce qui vous plaît, ce qui manque, ce qui ne marche pas..."></textarea></label>
+      <label>Votre métier et votre ville (facultatif)<input id="fbWho" placeholder="Ex : coiffeuse, Lyon" autocomplete="off"></label>
+      <div class="notice" id="fbNotice" style="display:none">Le formulaire d'avis sera bientôt disponible.</div>
+      <div class="err" id="fbErr" role="alert"></div>
+      <div class="row">
+        <a class="btn" id="fbGo" href="#" aria-disabled="true">Envoyer mon avis</a>
+        <button class="btn ghost" id="fbCopy" type="button">Copier mon avis</button>
+      </div>
+      <p class="help">Votre avis s'ouvre dans votre application e-mail, vous n'avez plus qu'à l'envoyer. Rien n'est enregistré sur ce site.</p>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">Avisio est un projet gratuit, en cours d'amélioration.</div></footer>
+
+<script src="script.js"></script>
+</body>
+</html>
